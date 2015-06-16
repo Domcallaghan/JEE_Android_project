@@ -23,20 +23,22 @@ import javax.validation.ConstraintViolationException;
  *
  * @author Ugo
  */
+
+//Gere l'accès aux spectacles + persistance
 @Stateless(name="spectaclesManager")
 @TransactionAttribute(TransactionAttributeType.REQUIRED)
 public class DAL_spectacles {
     
     
     public List<Spectacles> getSpectacle(String txt) {
-        EntityManagerFactory emf = Persistence.createEntityManagerFactory("WebServiceFou-ejbPU");
+        EntityManagerFactory emf = Persistence.createEntityManagerFactory("WebServiceFou-ejbPU");//gestion de persistence
         List results = null;
 
-        EntityManager em = emf.createEntityManager();
+        EntityManager em = emf.createEntityManager();//recupère l'EM de la PU
         try {
-                  Query query = em.createNamedQuery("Spectacles.findByNomSpectacle")
-                          .setParameter("nomSpectacle", txt);
-                  results = query.getResultList();
+                  Query query = em.createNamedQuery("Spectacles.findByNomSpectacle")//utilise une query nommée crée dans la classe d'entité
+                          .setParameter("nomSpectacle", txt);//set le parametre
+                  results = query.getResultList();//obtient le resultat
 
         }
         catch(Exception ex){ System.out.println( "ERROR :  " + ex.getMessage() + " AT " + ex.toString() );}

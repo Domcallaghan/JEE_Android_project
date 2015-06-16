@@ -34,6 +34,7 @@ import sun.util.logging.resources.logging;
 @TransactionAttribute(TransactionAttributeType.REQUIRED)
 public class fouService {
 
+    //Injections EJB des managers des différentes entitees
     @EJB
     private DAL_spectacles spectaclesManager;
     
@@ -43,11 +44,6 @@ public class fouService {
     @EJB
     private DAL_Restaurants restauManager;
     
-
-    @WebMethod(operationName = "hello")
-    public String hello(@WebParam(name = "name") String txt) {
-        return "Hello " + txt + " !";
-    }
     ///////////////////////////////////////////////////////////////////////////
     ///                          SPECTACLES                                 ///
     ///////////////////////////////////////////////////////////////////////////
