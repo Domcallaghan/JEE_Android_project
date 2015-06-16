@@ -5,7 +5,10 @@
  */
 package com.model;
 
+import com.facade.DAL_spectacles;
 import java.io.Serializable;
+import java.util.List;
+import javax.ejb.EJB;
 import javax.persistence.Basic;
 import javax.persistence.Column;
 import javax.persistence.Entity;
@@ -67,7 +70,7 @@ public class Spectacles implements Serializable {
     
     @Column(name = "nb_notes")
     private int nbNotes;
-
+    
     public Spectacles() {
     }
 
@@ -99,6 +102,7 @@ public class Spectacles implements Serializable {
     public Integer getIdSpectacle() {
         return idSpectacle;
     }
+    
 
     public void setIdSpectacle(Integer idSpectacle) {
         this.idSpectacle = idSpectacle;

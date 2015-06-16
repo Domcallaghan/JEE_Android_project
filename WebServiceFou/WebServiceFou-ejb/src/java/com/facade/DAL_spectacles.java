@@ -5,6 +5,8 @@
  */
 package com.facade;
 
+import com.model.Horaires;
+import com.model.JoinHorairesSpectacles;
 import com.model.Spectacles;
 import java.util.List;
 import javax.ejb.Stateless;
@@ -69,6 +71,36 @@ public class DAL_spectacles {
         catch(Exception ex){ System.out.println( "ERROR :  " + ex.getMessage() + " AT " + ex.toString() );}
         finally {em.close();}
         return results;
+    }
+    
+    public List<String> getHoraires(int id) {
+        EntityManagerFactory emf = Persistence.createEntityManagerFactory("WebServiceFou-ejbPU");
+        List results = null;
+        List<String> horaires = null;
+
+        EntityManager em = emf.createEntityManager();
+        try {
+        Query query = em.createNamedQuery("JoinHorairesSpectacles.findByRefIdSpectacle")
+                .setParameter("refIdSpectacle", id);
+        results = query.getResultList();
+        }
+        catch(Exception ex){ System.out.println( "ERROR :  " + ex.getMessage() + " AT " + ex.toString() );}
+        finally {em.close();}
+        
+        int i = ((JoinHorairesSpectacles)(results.get(0))).getRefIdHoraire();
+        try {
+          Query query = em.createNamedQuery("Horaires.findByIdHoraires")
+                  .setParameter("IdHoraires", i);
+          results = query.getResultList();
+        }
+        catch(Exception ex){ System.out.println( "ERROR :  " + ex.getMessage() + " AT " + ex.toString() );}
+        finally {em.close();}
+        for (Horaires h : (List<Horaires>)results )
+        {
+            horaires.add(h.getHoraires());
+        }
+        
+        return horaires;
     }
     
     public String addSpectacle(int id) {
