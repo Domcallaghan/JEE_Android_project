@@ -48,7 +48,10 @@ public class Restaurants implements Serializable {
     private String localisationRestaurant;
 
     @Column(name = "note_restaurant")
-    private int noteRestaurant;
+    private float noteRestaurant;
+    
+    @Column(name = "nb_notes")
+    private int nbNotes;
 
     public Restaurants() {
     }
@@ -88,12 +91,18 @@ public class Restaurants implements Serializable {
         this.localisationRestaurant = localisationRestaurant;
     }
 
-    public int getNoteRestaurant() {
+    public float getNoteRestaurant() {
         return noteRestaurant;
     }
 
-    public void setNoteRestaurant(int noteRestaurant) {
+    public void setNoteRestaurant(float noteRestaurant) {
         this.noteRestaurant = noteRestaurant;
+    }
+    
+    public void noter(float note){
+        float oldNote = this.noteRestaurant * this.nbNotes;
+        this.nbNotes++;
+        this.noteRestaurant = (oldNote + note) / this.nbNotes;
     }
 
     @Override

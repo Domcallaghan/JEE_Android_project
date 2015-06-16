@@ -48,7 +48,7 @@ public class Boutiques implements Serializable {
     private float noteBoutique;
     
     @Column(name = "nb_notes")
-    private float nbNotes;
+    private int nbNotes;
     
     @Size(min = 1, max = 50)
     @Column(name = "localisation_boutique")

@@ -126,4 +126,9 @@ public class fouService {
         
         return restau;
     }
+    
+    @WebMethod(operationName = "noterRestaurant")
+    public String noterRestaurant(@WebParam(name = "id") int id, @WebParam(name = "note") float note) {
+        return restauManager.noter(id, note);
+    }
 }
