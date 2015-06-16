@@ -5,6 +5,7 @@
  */
 package com.facade;
 
+import com.model.MenuRestaurant;
 import com.model.Restaurants;
 import com.model.Spectacles;
 import java.util.List;
@@ -45,6 +46,21 @@ public class DAL_Restaurants {
         EntityManager em = emf.createEntityManager();
         try {
                   Query query = em.createNamedQuery("Restaurants.findAll");
+                  results = query.getResultList();
+        }
+        catch(Exception ex){ System.out.println( "ERROR :  " + ex.getMessage() + " AT " + ex.toString() );}
+        finally {em.close();}
+        return results;
+    }
+    
+    public List<MenuRestaurant> getMenu(int id) {
+        EntityManagerFactory emf = Persistence.createEntityManagerFactory("WebServiceFou-ejbPU");
+        List results = null;
+
+        EntityManager em = emf.createEntityManager();
+        try {
+                  Query query = em.createNamedQuery("MenuRestaurant.findByRefIdRestaurant")
+                          .setParameter("RefIdRestaurant", id);
                   results = query.getResultList();
         }
         catch(Exception ex){ System.out.println( "ERROR :  " + ex.getMessage() + " AT " + ex.toString() );}

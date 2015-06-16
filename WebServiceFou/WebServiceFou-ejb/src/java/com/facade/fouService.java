@@ -6,6 +6,7 @@
 package com.facade;
 
 import com.model.Boutiques;
+import com.model.MenuRestaurant;
 import com.model.Restaurants;
 import com.model.Spectacles;
 import com.sun.org.apache.xml.internal.resolver.helpers.Debug;
@@ -114,6 +115,13 @@ public class fouService {
     @WebMethod(operationName = "getAllRestaurant")
     public List<Restaurants> getAllRestaurant() {
         List<Restaurants> restau = restauManager.getAll();
+        
+        return restau;
+    }
+    
+    @WebMethod(operationName = "getMenuRestaurant")
+    public List<MenuRestaurant> getMenuRestaurant(int id) {
+        List<MenuRestaurant> restau = restauManager.getMenu(id);
         
         return restau;
     }
