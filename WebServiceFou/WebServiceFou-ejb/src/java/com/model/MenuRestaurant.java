@@ -37,25 +37,20 @@ public class MenuRestaurant implements Serializable {
     private static final long serialVersionUID = 1L;
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
-    @Basic(optional = false)
     @Column(name = "id_menu_restaurant")
     private Integer idMenuRestaurant;
-    @Basic(optional = false)
-    @NotNull
+
     @Size(min = 1, max = 50)
     @Column(name = "nom_menu")
     private String nomMenu;
-    @Basic(optional = false)
-    @NotNull
+
     @Column(name = "tarif_menu")
     private float tarifMenu;
-    @Basic(optional = false)
-    @NotNull
+
     @Size(min = 1, max = 500)
     @Column(name = "d\u00e9tails_menu")
     private String détailsMenu;
-    @Basic(optional = false)
-    @NotNull
+
     @Column(name = "ref_id_restaurant")
     private int refIdRestaurant;
 

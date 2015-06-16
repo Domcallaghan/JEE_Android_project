@@ -38,23 +38,15 @@ public class Boutiques implements Serializable {
     
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
-    @Basic(optional = false)
     @Column(name = "id_boutique")
     private Integer idBoutique;
     
-    @Basic(optional = false)
-    @NotNull
-    @Size(min = 1, max = 50)
     @Column(name = "nom_boutique")
     private String nomBoutique;
     
-    @Basic(optional = false)
-    @NotNull
     @Column(name = "note_boutique")
     private int noteBoutique;
     
-    @Basic(optional = false)
-    @NotNull
     @Size(min = 1, max = 50)
     @Column(name = "localisation_boutique")
     private String localisationBoutique;

@@ -31,14 +31,13 @@ import static org.junit.Assert.*;
 public class fouServiceTest {
     
     
-    /*@EJB(beanName = "fouService", mappedName = "fouService")
+    @EJB(beanName = "fouService", mappedName = "fouService")
     private fouService fs;
-    
+
     @PersistenceContext(unitName = "WebServiceFou-ejbPU")
-    protected EntityManager em;*/
+    protected EntityManager em;
     
-     private Context  ctx;
-     private EJBContainer ejbContainer;
+
     
     public fouServiceTest() {
     }
@@ -65,21 +64,14 @@ public class fouServiceTest {
      */
     @Test
     public void testGetSpectaclebyId() throws Exception {
-        ejbContainer = EJBContainer.createEJBContainer();
-        System.out.println("Opening the container" );
-        ctx = ejbContainer.getContext();
-        
-        fouService fs = (fouService) ctx.lookup("java:global/classes/fouService");
-        assertNotNull(fs);
-
+ 
         System.out.println("getSpectaclebyId");
         int id = 1;
         List<Spectacles> spec = fs.getSpectaclebyId(id);
         String result = spec.get(0).getNomSpectacle();
         String expResult = "Le signe du triomphe";
         assertEquals(expResult, result);   
-        
-        ejbContainer.close();
+
         System.out.println("Closing the container" );
     }
     

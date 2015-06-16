@@ -34,11 +34,9 @@ public class Horaires implements Serializable {
     private static final long serialVersionUID = 1L;
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
-    @Basic(optional = false)
     @Column(name = "id_horaires")
     private Integer idHoraires;
-    @Basic(optional = false)
-    @NotNull
+
     @Size(min = 1, max = 50)
     @Column(name = "horaires")
     private String horaires;

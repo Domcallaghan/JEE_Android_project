@@ -36,21 +36,17 @@ public class Restaurants implements Serializable {
     private static final long serialVersionUID = 1L;
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
-    @Basic(optional = false)
     @Column(name = "id_restaurant")
     private Integer idRestaurant;
-    @Basic(optional = false)
-    @NotNull
+
     @Size(min = 1, max = 50)
     @Column(name = "nom_restaurant")
     private String nomRestaurant;
-    @Basic(optional = false)
-    @NotNull
+
     @Size(min = 1, max = 50)
     @Column(name = "localisation_restaurant")
     private String localisationRestaurant;
-    @Basic(optional = false)
-    @NotNull
+
     @Column(name = "note_restaurant")
     private int noteRestaurant;
 

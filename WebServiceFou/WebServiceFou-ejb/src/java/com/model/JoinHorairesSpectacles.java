@@ -35,15 +35,12 @@ public class JoinHorairesSpectacles implements Serializable {
     private static final long serialVersionUID = 1L;
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
-    @Basic(optional = false)
     @Column(name = "id_jointure")
     private Integer idJointure;
-    @Basic(optional = false)
-    @NotNull
+
     @Column(name = "ref_id_spectacle")
     private int refIdSpectacle;
-    @Basic(optional = false)
-    @NotNull
+
     @Column(name = "ref_id_horaire")
     private int refIdHoraire;
     @Column(name = "mois")

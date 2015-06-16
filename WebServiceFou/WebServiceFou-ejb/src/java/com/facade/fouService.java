@@ -25,9 +25,8 @@ import sun.util.logging.resources.logging;
 /**
  *
  * @author Ugo
- * Le Servcice (cuilà) appelle les EJB qui gèrent la communication avec glass/persistance et renvoient les 
+ * Le Service (cuilà) appelle les EJB qui gèrent la communication avec glass/persistance et renvoient les 
  * objets/confirmlation d'action qui sont traduits en XML par le service
- * un EJB par table
  */
 @WebService(serviceName = "fouService")
 @Stateless(name="fouService")
@@ -58,7 +57,7 @@ public class fouService {
         return spectacles;
     }
     
-    @WebMethod(operationName = "getSpectacleByID")
+    @WebMethod(operationName = "getSpectacleById")
     public List<Spectacles> getSpectaclebyId(@WebParam(name = "id") int id) {
         List<Spectacles> spectacles = spectaclesManager.getSpectacleById(id);
         
