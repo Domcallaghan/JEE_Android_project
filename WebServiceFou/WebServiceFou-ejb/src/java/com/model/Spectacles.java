@@ -82,6 +82,9 @@ public class Spectacles implements Serializable {
     @Size(min = 1, max = 500)
     @Column(name = "commentaires_spectacles")
     private String commentairesSpectacles;
+    
+    @Column(name = "nb_notes")
+    private int nbNotes;
 
     public Spectacles() {
     }
@@ -173,6 +176,12 @@ public class Spectacles implements Serializable {
 
     public void setCommentairesSpectacles(String commentairesSpectacles) {
         this.commentairesSpectacles = commentairesSpectacles;
+    }
+    
+    public void noter(int note){
+        int oldNote = this.noteSpectacle * this.nbNotes;
+        this.nbNotes++;
+        this.noteSpectacle = (oldNote + note) / this.nbNotes;
     }
 
     @Override

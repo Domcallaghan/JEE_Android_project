@@ -5,12 +5,17 @@
  */
 package com.facade;
 
+import com.model.Boutiques;
 import com.model.Spectacles;
+import com.sun.org.apache.xml.internal.resolver.helpers.Debug;
 import java.util.List;
+import javax.ejb.EJB;
 import javax.jws.WebService;
 import javax.jws.WebMethod;
 import javax.jws.WebParam;
 import javax.ejb.Stateless;
+import javax.ejb.TransactionAttribute;
+import javax.ejb.TransactionAttributeType;
 import javax.persistence.*;
 import javax.persistence.Query;
 import sun.util.logging.resources.logging;
@@ -18,12 +23,23 @@ import sun.util.logging.resources.logging;
 /**
  *
  * @author Ugo
+ * Le Servcice (cuilà) appelle les EJB qui gèrent la communication avec glass/persistance et renvoient les 
+ * objets/confirmlation d'action qui sont traduits en XML par le service
+ * un EJB par table
  */
 @WebService(serviceName = "fouService")
-@Stateless()
+@Stateless(name="fouService")
+@TransactionAttribute(TransactionAttributeType.REQUIRED)
 public class fouService {
 
+    @EJB
+    private DAL_spectacles spectaclesManager;
     
+    @EJB
+    private DAL_Boutiques boutiquesManager;
+    
+    @EJB
+    private DAL_Restaurants restauManager;
     
 
     @WebMethod(operationName = "hello")
@@ -33,37 +49,39 @@ public class fouService {
     
     @WebMethod(operationName = "getSpectacle")
     public List<Spectacles> getSpectacle(@WebParam(name = "name") String txt) {
-        EntityManagerFactory emf = Persistence.createEntityManagerFactory("WebServiceFou-ejbPU");
-
-        EntityManager em = emf.createEntityManager();
-        try {
-                  Query query = em.createNamedQuery("Spectacles.findByNomSpectacle")
-                          .setParameter("nomSpectacle", txt);
-                  List results = query.getResultList();
-                  return results;
-        }
-        finally {
-            em.close();
-        }
+        List<Spectacles> spectacles = spectaclesManager.getSpectacle(txt);
+        
+        return spectacles;
+    }
+    
+    @WebMethod(operationName = "getSpectacleByID")
+    public List<Spectacles> getSpectaclebyId(@WebParam(name = "id") int id) {
+        List<Spectacles> spectacles = spectaclesManager.getSpectacleById(id);
+        
+        return spectacles;
+    }
+    
+    @WebMethod(operationName = "getAllSpectacles")
+    public List<Spectacles> getAllSpectacles() {
+        List<Spectacles> spectacles = spectaclesManager.getAll();
+        
+        return spectacles;
     }
     
     @WebMethod(operationName = "addSpectacle")
     public String addSpectacle(@WebParam(name = "id") int id) {
-        EntityManagerFactory emf = Persistence.createEntityManagerFactory("WebServiceFou-ejbPU");
-
-        EntityManager em = emf.createEntityManager();
-        try {
-                  Spectacles s = new Spectacles(33, "test", 45, 3, "lol", 5, "la bas", "lolant");
-
-                  em.getTransaction().begin();
-                  em.persist(s);
-                  em.getTransaction().commit();
-                  
-
-                  return "true";
-        }
-        catch(Exception ex){return "fail "+ex.getMessage() ;}
-        finally { em.close();}
+        return spectaclesManager.addSpectacle(id);
     }
     
+    @WebMethod(operationName = "noterSpectacle")
+    public String noterSpectacle(@WebParam(name = "id") int id, @WebParam(name = "note") int note) {
+        return spectaclesManager.noterSpectacle(id, note);
+    }
+    
+    @WebMethod(operationName = "getBoutiqueByID")
+    public List<Boutiques> getBoutiqueByID(@WebParam(name = "id") int id) {
+        List<Boutiques> boutiques = boutiquesManager.getById(id);
+        
+        return boutiques;
+    }
 }
