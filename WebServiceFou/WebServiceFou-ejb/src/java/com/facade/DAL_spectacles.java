@@ -15,6 +15,7 @@ import javax.persistence.EntityManager;
 import javax.persistence.EntityManagerFactory;
 import javax.persistence.Persistence;
 import javax.persistence.Query;
+import javax.validation.ConstraintViolationException;
 
 /**
  *
@@ -90,11 +91,11 @@ public class DAL_spectacles {
     
     public String noterSpectacle(int id, int note) {
         EntityManagerFactory emf = Persistence.createEntityManagerFactory("WebServiceFou-ejbPU");
-
+        String transac ="";
         EntityManager em = emf.createEntityManager();
         try {
                   Spectacles s = em.find(Spectacles.class, id);//new Spectacles("test", 45, 3, "lol", 5, "la bas", "lolant");
-
+                  transac = Integer.toString(s.getNoteSpectacle());
                   em.getTransaction().begin();
                   s.noter(note); //em.persist(s);
                   em.getTransaction().commit();
@@ -102,7 +103,10 @@ public class DAL_spectacles {
 
                   return "true, note:" + s.getNoteSpectacle();
         }
-        catch(Exception ex){ return "ERROR :  \n" + ex.getMessage() + " AT " + ex.toString() ;}
+        catch(Exception ex){ 
+            
+            return "ERROR :  \n" + transac + ex.getMessage() + " AT " + ex.toString() ; }
+        //catch(Exception ex){ return "ERROR :  \n" + transac + ex.getMessage() + " AT " + ex.toString() ; }
         finally { em.close();}
     }
     

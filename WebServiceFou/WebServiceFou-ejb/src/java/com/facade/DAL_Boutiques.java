@@ -37,4 +37,18 @@ public class DAL_Boutiques {
         finally {em.close();}
         return results;
     }
+    
+    public List<Boutiques> getAll() {
+        EntityManagerFactory emf = Persistence.createEntityManagerFactory("WebServiceFou-ejbPU");
+        List results = null;
+
+        EntityManager em = emf.createEntityManager();
+        try {
+                  Query query = em.createNamedQuery("Boutiques.findAll");
+                  results = query.getResultList();
+        }
+        catch(Exception ex){ System.out.println( "ERROR :  " + ex.getMessage() + " AT " + ex.toString() );}
+        finally {em.close();}
+        return results;
+    }
 }

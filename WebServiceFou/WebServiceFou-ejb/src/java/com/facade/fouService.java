@@ -6,10 +6,12 @@
 package com.facade;
 
 import com.model.Boutiques;
+import com.model.Restaurants;
 import com.model.Spectacles;
 import com.sun.org.apache.xml.internal.resolver.helpers.Debug;
 import java.util.List;
 import javax.ejb.EJB;
+import javax.ejb.Remote;
 import javax.jws.WebService;
 import javax.jws.WebMethod;
 import javax.jws.WebParam;
@@ -46,7 +48,9 @@ public class fouService {
     public String hello(@WebParam(name = "name") String txt) {
         return "Hello " + txt + " !";
     }
-    
+    ///////////////////////////////////////////////////////////////////////////
+    ///                          SPECTACLES                                 ///
+    ///////////////////////////////////////////////////////////////////////////
     @WebMethod(operationName = "getSpectacle")
     public List<Spectacles> getSpectacle(@WebParam(name = "name") String txt) {
         List<Spectacles> spectacles = spectaclesManager.getSpectacle(txt);
@@ -78,10 +82,40 @@ public class fouService {
         return spectaclesManager.noterSpectacle(id, note);
     }
     
+    
+    ///////////////////////////////////////////////////////////////////////////
+    ///                          BOUTIQUES                                  ///
+    ///////////////////////////////////////////////////////////////////////////
+    
     @WebMethod(operationName = "getBoutiqueByID")
     public List<Boutiques> getBoutiqueByID(@WebParam(name = "id") int id) {
         List<Boutiques> boutiques = boutiquesManager.getById(id);
         
         return boutiques;
+    }
+    
+    @WebMethod(operationName = "getAllBoutiques")
+    public List<Boutiques> getAllBoutiques() {
+        List<Boutiques> boutiques = boutiquesManager.getAll();
+        
+        return boutiques;
+    }
+    
+    ///////////////////////////////////////////////////////////////////////////
+    ///                          RESTAURANTS                                ///
+    ///////////////////////////////////////////////////////////////////////////
+    
+    @WebMethod(operationName = "getRestaurantByID")
+    public List<Restaurants> getRestaurantByID(@WebParam(name = "id") int id) {
+        List<Restaurants> restau = restauManager.getById(id);
+        
+        return restau;
+    }
+    
+    @WebMethod(operationName = "getAllRestaurant")
+    public List<Restaurants> getAllRestaurant() {
+        List<Restaurants> restau = restauManager.getAll();
+        
+        return restau;
     }
 }

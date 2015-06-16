@@ -44,42 +44,24 @@ public class Spectacles implements Serializable {
     @Column(name = "id_spectacle")
     private Integer idSpectacle;
     
-    @Basic(optional = false)
-    @NotNull
-    @Size(min = 1, max = 50)
     @Column(name = "nom_spectacle")
     private String nomSpectacle;
-    
-    @Basic(optional = false)
-    @NotNull
+
     @Column(name = "duree_spectacle")
     private float dureeSpectacle;
-    
-    @Basic(optional = false)
-    @NotNull
+
     @Column(name = "nombre_acteurs")
     private int nombreActeurs;
     
-    @Basic(optional = false)
-    @NotNull
-    @Size(min = 1, max = 50)
     @Column(name = "evenement_historique_spectacle")
     private String evenementHistoriqueSpectacle;
     
-    @Basic(optional = false)
-    @NotNull
     @Column(name = "note_spectacle")
     private int noteSpectacle;
     
-    @Basic(optional = false)
-    @NotNull
-    @Size(min = 1, max = 50)
     @Column(name = "localisation")
     private String localisation;
     
-    @Basic(optional = false)
-    @NotNull
-    @Size(min = 1, max = 500)
     @Column(name = "commentaires_spectacles")
     private String commentairesSpectacles;
     
