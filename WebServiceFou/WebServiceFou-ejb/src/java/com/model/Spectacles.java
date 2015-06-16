@@ -60,7 +60,7 @@ public class Spectacles implements Serializable {
     private String evenementHistoriqueSpectacle;
     
     @Column(name = "note_spectacle")
-    private int noteSpectacle;
+    private float noteSpectacle;
     
     @Column(name = "localisation")
     private String localisation;
@@ -78,7 +78,7 @@ public class Spectacles implements Serializable {
         this.idSpectacle = idSpectacle;
     }
 
-    public Spectacles(Integer idSpectacle, String nomSpectacle, float dureeSpectacle, int nombreActeurs, String evenementHistoriqueSpectacle, int noteSpectacle, String localisation, String commentairesSpectacles) {
+    public Spectacles(Integer idSpectacle, String nomSpectacle, float dureeSpectacle, int nombreActeurs, String evenementHistoriqueSpectacle, float noteSpectacle, String localisation, String commentairesSpectacles) {
         this.idSpectacle = idSpectacle;
         this.nomSpectacle = nomSpectacle;
         this.dureeSpectacle = dureeSpectacle;
@@ -89,7 +89,7 @@ public class Spectacles implements Serializable {
         this.commentairesSpectacles = commentairesSpectacles;
     }
     
-    public Spectacles(String nomSpectacle, float dureeSpectacle, int nombreActeurs, String evenementHistoriqueSpectacle, int noteSpectacle, String localisation, String commentairesSpectacles) {
+    public Spectacles(String nomSpectacle, float dureeSpectacle, int nombreActeurs, String evenementHistoriqueSpectacle, float noteSpectacle, String localisation, String commentairesSpectacles) {
         this.nomSpectacle = nomSpectacle;
         this.dureeSpectacle = dureeSpectacle;
         this.nombreActeurs = nombreActeurs;
@@ -140,7 +140,7 @@ public class Spectacles implements Serializable {
         this.evenementHistoriqueSpectacle = evenementHistoriqueSpectacle;
     }
 
-    public int getNoteSpectacle() {
+    public float getNoteSpectacle() {
         return noteSpectacle;
     }
 
@@ -164,8 +164,8 @@ public class Spectacles implements Serializable {
         this.commentairesSpectacles = commentairesSpectacles;
     }
     
-    public void noter(int note){
-        int oldNote = this.noteSpectacle * this.nbNotes;
+    public void noter(float note){
+        float oldNote = this.noteSpectacle * this.nbNotes;
         this.nbNotes++;
         this.noteSpectacle = (oldNote + note) / this.nbNotes;
     }

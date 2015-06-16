@@ -123,13 +123,13 @@ public class DAL_spectacles {
         finally { em.close();}
     }
     
-    public String noterSpectacle(int id, int note) {
+    public String noterSpectacle(int id, float note) {
         EntityManagerFactory emf = Persistence.createEntityManagerFactory("WebServiceFou-ejbPU");
         String transac ="";
         EntityManager em = emf.createEntityManager();
         try {
                   Spectacles s = em.find(Spectacles.class, id);//new Spectacles("test", 45, 3, "lol", 5, "la bas", "lolant");
-                  transac = Integer.toString(s.getNoteSpectacle());
+                  transac = Float.toString(s.getNoteSpectacle());
                   em.getTransaction().begin();
                   s.noter(note); //em.persist(s);
                   em.getTransaction().commit();

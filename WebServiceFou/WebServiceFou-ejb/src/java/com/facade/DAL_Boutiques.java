@@ -51,4 +51,25 @@ public class DAL_Boutiques {
         finally {em.close();}
         return results;
     }
+    
+        public String noter(int id, float note) {
+        EntityManagerFactory emf = Persistence.createEntityManagerFactory("WebServiceFou-ejbPU");
+        String transac ="";
+        EntityManager em = emf.createEntityManager();
+        try {
+                  Boutiques s = em.find(Boutiques.class, id);//new Spectacles("test", 45, 3, "lol", 5, "la bas", "lolant");
+                  //transac = Float.toString(s.getNoteBoutique()); //debug
+                  em.getTransaction().begin();
+                  s.noter(note); //em.persist(s);
+                  em.getTransaction().commit();
+                  
+
+                  return "true, note:" + s.getNoteBoutique();
+        }
+        catch(Exception ex){ 
+            
+            return "ERROR :  \n" + transac + ex.getMessage() + " AT " + ex.toString() ; }
+        //catch(Exception ex){ return "ERROR :  \n" + transac + ex.getMessage() + " AT " + ex.toString() ; }
+        finally { em.close();}
+    }
 }

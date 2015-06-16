@@ -74,7 +74,7 @@ public class fouService {
     }
     
     @WebMethod(operationName = "noterSpectacle")
-    public String noterSpectacle(@WebParam(name = "id") int id, @WebParam(name = "note") int note) {
+    public String noterSpectacle(@WebParam(name = "id") int id, @WebParam(name = "note") float note) {
         return spectaclesManager.noterSpectacle(id, note);
     }
     
@@ -95,6 +95,11 @@ public class fouService {
         List<Boutiques> boutiques = boutiquesManager.getAll();
         
         return boutiques;
+    }
+    
+    @WebMethod(operationName = "noterBoutique")
+    public String noterBoutique(@WebParam(name = "id") int id, @WebParam(name = "note") float note) {
+        return boutiquesManager.noter(id, note);
     }
     
     ///////////////////////////////////////////////////////////////////////////

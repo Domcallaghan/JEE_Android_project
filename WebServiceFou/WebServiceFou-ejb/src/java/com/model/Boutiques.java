@@ -45,7 +45,10 @@ public class Boutiques implements Serializable {
     private String nomBoutique;
     
     @Column(name = "note_boutique")
-    private int noteBoutique;
+    private float noteBoutique;
+    
+    @Column(name = "nb_notes")
+    private float nbNotes;
     
     @Size(min = 1, max = 50)
     @Column(name = "localisation_boutique")
@@ -81,7 +84,7 @@ public class Boutiques implements Serializable {
         this.nomBoutique = nomBoutique;
     }
 
-    public int getNoteBoutique() {
+    public float getNoteBoutique() {
         return noteBoutique;
     }
 
@@ -95,6 +98,12 @@ public class Boutiques implements Serializable {
 
     public void setLocalisationBoutique(String localisationBoutique) {
         this.localisationBoutique = localisationBoutique;
+    }
+    
+    public void noter(float note){
+        float oldNote = this.noteBoutique * this.nbNotes;
+        this.nbNotes++;
+        this.noteBoutique = (oldNote + note) / this.nbNotes;
     }
 
     @Override
