@@ -1,0 +1,74 @@
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools" android:layout_width="match_parent"
+    android:layout_height="match_parent" android:paddingLeft="@dimen/activity_horizontal_margin"
+    android:paddingRight="@dimen/activity_horizontal_margin"
+    android:paddingTop="@dimen/activity_vertical_margin"
+    android:paddingBottom="@dimen/activity_vertical_margin" tools:context=".Index">
+
+
+    <Button
+        style="?android:attr/buttonStyleSmall"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Plannings"
+        android:id="@+id/bt_plannings"
+        android:width="170dp"
+        android:height="75dp"
+        android:layout_above="@+id/bt_partage"
+        android:layout_alignParentStart="true" />
+
+    <Button
+        style="?android:attr/buttonStyleSmall"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Spectacles"
+        android:id="@+id/bt_spectacles"
+        android:width="170dp"
+        android:height="75dp"
+        android:layout_above="@+id/bt_partage"
+        android:layout_alignParentEnd="true" />
+
+    <Button
+        style="?android:attr/buttonStyleSmall"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Services"
+        android:id="@+id/bt_services"
+        android:height="75dp"
+        android:width="170dp"
+        android:layout_alignTop="@+id/bt_spectacles"
+        android:layout_centerHorizontal="true" />
+
+    <Button
+        style="?android:attr/buttonStyleSmall"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Partage"
+        android:id="@+id/bt_partage"
+        android:width="170dp"
+        android:height="75dp"
+        android:layout_alignParentBottom="true"
+        android:layout_alignStart="@+id/bt_services" />
+
+    <Button
+        style="?android:attr/buttonStyleSmall"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="File d&apos;attente"
+        android:id="@+id/bt_fileAttente"
+        android:width="170dp"
+        android:height="75dp"
+        android:layout_alignParentBottom="true"
+        android:layout_alignParentStart="true" />
+
+    <Button
+        style="?android:attr/buttonStyleSmall"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Plan du parc"
+        android:id="@+id/bt_plan"
+        android:height="75dp"
+        android:width="170dp"
+        android:layout_alignParentBottom="true"
+        android:layout_alignParentEnd="true" />
+</RelativeLayout>
