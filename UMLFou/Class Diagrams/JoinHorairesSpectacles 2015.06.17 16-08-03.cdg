@@ -1,0 +1,50 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<ClassDiagram name="JoinHorairesSpectacles">
+  <ClassDiagramComponents>
+    <Class name="JoinHorairesSpectacles" package="com.model" visibility="public" xPosition="20.0" yPosition="20.0">
+      <Fields>
+        <Field name="serialVersionUID" type="long" visibility="private" isStatic="true" isFinal="true"/>
+        <Field name="idJointure" type="Integer" visibility="private"/>
+        <Field name="refIdSpectacle" type="int" visibility="private"/>
+        <Field name="refIdHoraire" type="int" visibility="private"/>
+        <Field name="mois" type="Integer" visibility="private"/>
+      </Fields>
+      <Constructors>
+        <Constructor visibility="public"/>
+        <Constructor visibility="public">
+          <Argument type="Integer" name="idJointure"/>
+        </Constructor>
+        <Constructor visibility="public">
+          <Argument type="Integer" name="idJointure"/>
+          <Argument type="int" name="refIdSpectacle"/>
+          <Argument type="int" name="refIdHoraire"/>
+        </Constructor>
+      </Constructors>
+      <Methods>
+        <Method name="getIdJointure" returnType="Integer" visibility="public"/>
+        <Method name="setIdJointure" returnType="void" visibility="public">
+          <Argument type="Integer" name="idJointure"/>
+        </Method>
+        <Method name="getRefIdSpectacle" returnType="int" visibility="public"/>
+        <Method name="setRefIdSpectacle" returnType="void" visibility="public">
+          <Argument type="int" name="refIdSpectacle"/>
+        </Method>
+        <Method name="getRefIdHoraire" returnType="int" visibility="public"/>
+        <Method name="setRefIdHoraire" returnType="void" visibility="public">
+          <Argument type="int" name="refIdHoraire"/>
+        </Method>
+        <Method name="getMois" returnType="Integer" visibility="public"/>
+        <Method name="setMois" returnType="void" visibility="public">
+          <Argument type="Integer" name="mois"/>
+        </Method>
+        <Method name="hashCode" returnType="int" visibility="public"/>
+        <Method name="equals" returnType="boolean" visibility="public">
+          <Argument type="Object" name="object"/>
+        </Method>
+        <Method name="toString" returnType="String" visibility="public"/>
+      </Methods>
+    </Class>
+  </ClassDiagramComponents>
+  <ClassDiagramRelations/>
+</ClassDiagram>

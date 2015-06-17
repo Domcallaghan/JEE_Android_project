@@ -1,0 +1,88 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<ClassDiagram name="Spectacles">
+  <ClassDiagramComponents>
+    <Class name="Spectacles" package="com.model" visibility="public" xPosition="20.0" yPosition="20.0">
+      <Fields>
+        <Field name="serialVersionUID" type="long" visibility="private" isStatic="true" isFinal="true"/>
+        <Field name="idSpectacle" type="Integer" visibility="private"/>
+        <Field name="nomSpectacle" type="String" visibility="private"/>
+        <Field name="dureeSpectacle" type="float" visibility="private"/>
+        <Field name="nombreActeurs" type="int" visibility="private"/>
+        <Field name="evenementHistoriqueSpectacle" type="String" visibility="private"/>
+        <Field name="noteSpectacle" type="float" visibility="private"/>
+        <Field name="localisation" type="String" visibility="private"/>
+        <Field name="commentairesSpectacles" type="String" visibility="private"/>
+        <Field name="nbNotes" type="int" visibility="private"/>
+      </Fields>
+      <Constructors>
+        <Constructor visibility="public"/>
+        <Constructor visibility="public">
+          <Argument type="Integer" name="idSpectacle"/>
+        </Constructor>
+        <Constructor visibility="public">
+          <Argument type="Integer" name="idSpectacle"/>
+          <Argument type="String" name="nomSpectacle"/>
+          <Argument type="float" name="dureeSpectacle"/>
+          <Argument type="int" name="nombreActeurs"/>
+          <Argument type="String" name="evenementHistoriqueSpectacle"/>
+          <Argument type="float" name="noteSpectacle"/>
+          <Argument type="String" name="localisation"/>
+          <Argument type="String" name="commentairesSpectacles"/>
+        </Constructor>
+        <Constructor visibility="public">
+          <Argument type="String" name="nomSpectacle"/>
+          <Argument type="float" name="dureeSpectacle"/>
+          <Argument type="int" name="nombreActeurs"/>
+          <Argument type="String" name="evenementHistoriqueSpectacle"/>
+          <Argument type="float" name="noteSpectacle"/>
+          <Argument type="String" name="localisation"/>
+          <Argument type="String" name="commentairesSpectacles"/>
+        </Constructor>
+      </Constructors>
+      <Methods>
+        <Method name="getIdSpectacle" returnType="Integer" visibility="public"/>
+        <Method name="setIdSpectacle" returnType="void" visibility="public">
+          <Argument type="Integer" name="idSpectacle"/>
+        </Method>
+        <Method name="getNomSpectacle" returnType="String" visibility="public"/>
+        <Method name="setNomSpectacle" returnType="void" visibility="public">
+          <Argument type="String" name="nomSpectacle"/>
+        </Method>
+        <Method name="getDureeSpectacle" returnType="float" visibility="public"/>
+        <Method name="setDureeSpectacle" returnType="void" visibility="public">
+          <Argument type="float" name="dureeSpectacle"/>
+        </Method>
+        <Method name="getNombreActeurs" returnType="int" visibility="public"/>
+        <Method name="setNombreActeurs" returnType="void" visibility="public">
+          <Argument type="int" name="nombreActeurs"/>
+        </Method>
+        <Method name="getEvenementHistoriqueSpectacle" returnType="String" visibility="public"/>
+        <Method name="setEvenementHistoriqueSpectacle" returnType="void" visibility="public">
+          <Argument type="String" name="evenementHistoriqueSpectacle"/>
+        </Method>
+        <Method name="getNoteSpectacle" returnType="float" visibility="public"/>
+        <Method name="setNoteSpectacle" returnType="void" visibility="public">
+          <Argument type="float" name="noteSpectacle"/>
+        </Method>
+        <Method name="getLocalisation" returnType="String" visibility="public"/>
+        <Method name="setLocalisation" returnType="void" visibility="public">
+          <Argument type="String" name="localisation"/>
+        </Method>
+        <Method name="getCommentairesSpectacles" returnType="String" visibility="public"/>
+        <Method name="setCommentairesSpectacles" returnType="void" visibility="public">
+          <Argument type="String" name="commentairesSpectacles"/>
+        </Method>
+        <Method name="noter" returnType="void" visibility="public">
+          <Argument type="float" name="note"/>
+        </Method>
+        <Method name="hashCode" returnType="int" visibility="public"/>
+        <Method name="equals" returnType="boolean" visibility="public">
+          <Argument type="Object" name="object"/>
+        </Method>
+        <Method name="toString" returnType="String" visibility="public"/>
+      </Methods>
+    </Class>
+  </ClassDiagramComponents>
+  <ClassDiagramRelations/>
+</ClassDiagram>

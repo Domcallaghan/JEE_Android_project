@@ -1,0 +1,39 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<ClassDiagram name="Horaires">
+  <ClassDiagramComponents>
+    <Class name="Horaires" package="com.model" visibility="public" xPosition="20.0" yPosition="20.0">
+      <Fields>
+        <Field name="serialVersionUID" type="long" visibility="private" isStatic="true" isFinal="true"/>
+        <Field name="idHoraires" type="Integer" visibility="private"/>
+        <Field name="horaires" type="String" visibility="private"/>
+      </Fields>
+      <Constructors>
+        <Constructor visibility="public"/>
+        <Constructor visibility="public">
+          <Argument type="Integer" name="idHoraires"/>
+        </Constructor>
+        <Constructor visibility="public">
+          <Argument type="Integer" name="idHoraires"/>
+          <Argument type="String" name="horaires"/>
+        </Constructor>
+      </Constructors>
+      <Methods>
+        <Method name="getIdHoraires" returnType="Integer" visibility="public"/>
+        <Method name="setIdHoraires" returnType="void" visibility="public">
+          <Argument type="Integer" name="idHoraires"/>
+        </Method>
+        <Method name="getHoraires" returnType="String" visibility="public"/>
+        <Method name="setHoraires" returnType="void" visibility="public">
+          <Argument type="String" name="horaires"/>
+        </Method>
+        <Method name="hashCode" returnType="int" visibility="public"/>
+        <Method name="equals" returnType="boolean" visibility="public">
+          <Argument type="Object" name="object"/>
+        </Method>
+        <Method name="toString" returnType="String" visibility="public"/>
+      </Methods>
+    </Class>
+  </ClassDiagramComponents>
+  <ClassDiagramRelations/>
+</ClassDiagram>

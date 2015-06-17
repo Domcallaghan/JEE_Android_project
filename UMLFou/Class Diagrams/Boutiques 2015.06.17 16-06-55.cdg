@@ -1,0 +1,55 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<ClassDiagram name="Boutiques">
+  <ClassDiagramComponents>
+    <Class name="Boutiques" package="com.model" visibility="public" xPosition="920.0" yPosition="20.0">
+      <Fields>
+        <Field name="serialVersionUID" type="long" visibility="private" isStatic="true" isFinal="true"/>
+        <Field name="idBoutique" type="Integer" visibility="private"/>
+        <Field name="nomBoutique" type="String" visibility="private"/>
+        <Field name="noteBoutique" type="float" visibility="private"/>
+        <Field name="nbNotes" type="int" visibility="private"/>
+        <Field name="localisationBoutique" type="String" visibility="private"/>
+      </Fields>
+      <Constructors>
+        <Constructor visibility="public"/>
+        <Constructor visibility="public">
+          <Argument type="Integer" name="idBoutique"/>
+        </Constructor>
+        <Constructor visibility="public">
+          <Argument type="Integer" name="idBoutique"/>
+          <Argument type="String" name="nomBoutique"/>
+          <Argument type="int" name="noteBoutique"/>
+          <Argument type="String" name="localisationBoutique"/>
+        </Constructor>
+      </Constructors>
+      <Methods>
+        <Method name="getIdBoutique" returnType="Integer" visibility="public"/>
+        <Method name="setIdBoutique" returnType="void" visibility="public">
+          <Argument type="Integer" name="idBoutique"/>
+        </Method>
+        <Method name="getNomBoutique" returnType="String" visibility="public"/>
+        <Method name="setNomBoutique" returnType="void" visibility="public">
+          <Argument type="String" name="nomBoutique"/>
+        </Method>
+        <Method name="getNoteBoutique" returnType="float" visibility="public"/>
+        <Method name="setNoteBoutique" returnType="void" visibility="public">
+          <Argument type="int" name="noteBoutique"/>
+        </Method>
+        <Method name="getLocalisationBoutique" returnType="String" visibility="public"/>
+        <Method name="setLocalisationBoutique" returnType="void" visibility="public">
+          <Argument type="String" name="localisationBoutique"/>
+        </Method>
+        <Method name="noter" returnType="void" visibility="public">
+          <Argument type="float" name="note"/>
+        </Method>
+        <Method name="hashCode" returnType="int" visibility="public"/>
+        <Method name="equals" returnType="boolean" visibility="public">
+          <Argument type="Object" name="object"/>
+        </Method>
+        <Method name="toString" returnType="String" visibility="public"/>
+      </Methods>
+    </Class>
+  </ClassDiagramComponents>
+  <ClassDiagramRelations/>
+</ClassDiagram>
