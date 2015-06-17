@@ -1,0 +1,55 @@
+<?xml version="1.0" encoding="utf-8"?>
+<manifest xmlns:android="http://schemas.android.com/apk/res/android"
+    package="com.example.exia.projetpuydufou" >
+
+    <uses-sdk android:minSdkVersion="7" android:targetSdkVersion="17"/>
+    <uses-permission android:name="android.permission.INTERNET"/>
+
+    <application
+        android:allowBackup="true"
+        android:icon="@mipmap/ic_launcher"
+        android:label="@string/app_name"
+        android:theme="@style/AppTheme" >
+        <activity
+            android:name=".Index"
+            android:label="@string/app_name"
+            android:screenOrientation="sensorPortrait">
+            <intent-filter>
+                <action android:name="android.intent.action.MAIN" />
+
+                <category android:name="android.intent.category.LAUNCHER" />
+            </intent-filter>
+        </activity>
+        <activity
+            android:name=".Plannings"
+            android:label="@string/title_activity_plannings"
+            android:screenOrientation="sensorPortrait" >
+        </activity>
+        <activity
+            android:name=".Services"
+            android:label="@string/title_activity_services"
+            android:screenOrientation="sensorPortrait" >
+        </activity>
+        <activity
+            android:name=".Spectacles"
+            android:label="@string/title_activity_spectacles"
+            android:screenOrientation="sensorPortrait" >
+        </activity>
+        <activity
+            android:name=".FileAttente"
+            android:label="@string/title_activity_file_attente"
+            android:screenOrientation="sensorPortrait" >
+        </activity>
+        <activity
+            android:name=".Partage"
+            android:label="@string/title_activity_partage"
+            android:screenOrientation="sensorPortrait" >
+        </activity>
+        <activity
+            android:name=".PlanParc"
+            android:label="@string/title_activity_plan_parc"
+            android:screenOrientation="sensorLandscape" >
+        </activity>
+    </application>
+
+</manifest>

@@ -1,0 +1,13 @@
+<resources>
+    <string name="app_name">Puy du Fou Manager</string>
+
+    <string name="action_settings">Settings</string>
+    <string name="title_activity_plannings">Plannings</string>
+
+    <string name="hello_world">Hello world!</string>
+    <string name="title_activity_services">Services</string>
+    <string name="title_activity_spectacles">Spectacles</string>
+    <string name="title_activity_file_attente">File d\'attente</string>
+    <string name="title_activity_partage">Partage</string>
+    <string name="title_activity_plan_parc">Plan du parc</string>
+</resources>
