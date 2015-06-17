@@ -144,7 +144,7 @@ public class Spectacles implements Serializable {
         return noteSpectacle;
     }
 
-    public void setNoteSpectacle(int noteSpectacle) {
+    public void setNoteSpectacle(float noteSpectacle) {
         this.noteSpectacle = noteSpectacle;
     }
 

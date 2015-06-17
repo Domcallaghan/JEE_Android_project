@@ -16,9 +16,15 @@ import javax.ejb.EJB;
  * @author Ugo
  */
 public class Planning {
-    public List<Spectacles> defaultPlanning;
     
-  
+    //public List<SpectaclesProg>;
+    /*public Spectacles spec;
+    public Time hDebut;
+    public Time hFin;*/
     
+    public Planning()
+    {
+       //need 2 wrapper, un spectacle prog avc debut/fin, +planning avc liste de tous les spectacles (mutlipels horaires comprises)
+    }
 }
     
