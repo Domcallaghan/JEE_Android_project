@@ -1,0 +1,55 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<ClassDiagram name="Restaurants">
+  <ClassDiagramComponents>
+    <Class name="Restaurants" package="com.model" visibility="public" xPosition="320.0" yPosition="420.0">
+      <Fields>
+        <Field name="serialVersionUID" type="long" visibility="private" isStatic="true" isFinal="true"/>
+        <Field name="idRestaurant" type="Integer" visibility="private"/>
+        <Field name="nomRestaurant" type="String" visibility="private"/>
+        <Field name="localisationRestaurant" type="String" visibility="private"/>
+        <Field name="noteRestaurant" type="float" visibility="private"/>
+        <Field name="nbNotes" type="int" visibility="private"/>
+      </Fields>
+      <Constructors>
+        <Constructor visibility="public"/>
+        <Constructor visibility="public">
+          <Argument type="Integer" name="idRestaurant"/>
+        </Constructor>
+        <Constructor visibility="public">
+          <Argument type="Integer" name="idRestaurant"/>
+          <Argument type="String" name="nomRestaurant"/>
+          <Argument type="String" name="localisationRestaurant"/>
+          <Argument type="int" name="noteRestaurant"/>
+        </Constructor>
+      </Constructors>
+      <Methods>
+        <Method name="getIdRestaurant" returnType="Integer" visibility="public"/>
+        <Method name="setIdRestaurant" returnType="void" visibility="public">
+          <Argument type="Integer" name="idRestaurant"/>
+        </Method>
+        <Method name="getNomRestaurant" returnType="String" visibility="public"/>
+        <Method name="setNomRestaurant" returnType="void" visibility="public">
+          <Argument type="String" name="nomRestaurant"/>
+        </Method>
+        <Method name="getLocalisationRestaurant" returnType="String" visibility="public"/>
+        <Method name="setLocalisationRestaurant" returnType="void" visibility="public">
+          <Argument type="String" name="localisationRestaurant"/>
+        </Method>
+        <Method name="getNoteRestaurant" returnType="float" visibility="public"/>
+        <Method name="setNoteRestaurant" returnType="void" visibility="public">
+          <Argument type="float" name="noteRestaurant"/>
+        </Method>
+        <Method name="noter" returnType="void" visibility="public">
+          <Argument type="float" name="note"/>
+        </Method>
+        <Method name="hashCode" returnType="int" visibility="public"/>
+        <Method name="equals" returnType="boolean" visibility="public">
+          <Argument type="Object" name="object"/>
+        </Method>
+        <Method name="toString" returnType="String" visibility="public"/>
+      </Methods>
+    </Class>
+  </ClassDiagramComponents>
+  <ClassDiagramRelations/>
+</ClassDiagram>
